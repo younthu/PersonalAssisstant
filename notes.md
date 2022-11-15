@@ -1,0 +1,1 @@
+1. new tab页面用redux, 不需要`webext-redux`的支持， 可以参考代码，https://github.com/altany/react-new-tab-chrome-extension 。

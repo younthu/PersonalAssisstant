@@ -101,6 +101,24 @@ var options = {
         ],
         exclude: /node_modules/,
       },
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+              modules: true
+            }
+          },
+          {
+            loader: "less-loader"
+          }
+        ]
+      }
     ],
   },
   resolve: {
