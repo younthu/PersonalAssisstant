@@ -72,7 +72,7 @@ class TodoList extends React.Component {
               {(provided, snapshot) => (
                 <div ref={provided.innerRef}>
                   {visibleTodos.map((todo, index) => (
-                    <Draggable key={todo.id} draggableId={todo.id} index={index}>
+                    <Draggable key={todo.id} draggableId={'' + todo.id} index={index}>
                       {(provided, snapshot) => (
                           <div
                             ref={provided.innerRef}
