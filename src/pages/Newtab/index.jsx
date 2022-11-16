@@ -4,15 +4,22 @@ import TodoApp from './todos'
 import './index.css';
 import { Provider } from "react-redux";
 import { createStore } from 'redux';
-import reducer from './todos/reducers'
+import rootReducer from './todos/reducers'
+import { persistStore, persistReducer } from 'redux-persist'
+import { PersistGate } from 'redux-persist/integration/react'
+import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
+const persistConfig = {
+    key: 'root',
+    storage,
+  }
+  
+const persistedReducer = persistReducer(persistConfig, rootReducer)
+const store =  createStore(persistedReducer);// a normal Redux store
+let persistor = persistStore(store)
 
-const store =  createStore(reducer);// a normal Redux store
+// used localStorage for redux persist, if want to remove the persist, please check it here: https://github.com/rt2zz/redux-persist .
+render(<Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}><TodoApp /></PersistGate>
+</Provider>, window.document.querySelector('#app-container'));
 
-// const proxyStore = new Store();
-// const store = createStore(rootReducer)
-// wait for the store to connect to the background page
-// proxyStore.ready().then(() => {
-    console.log("proxy store ready.")
-    render(<Provider store={store}><TodoApp /></Provider>, window.document.querySelector('#app-container'));
-// });
 if (module.hot) module.hot.accept();

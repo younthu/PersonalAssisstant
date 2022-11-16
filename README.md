@@ -145,6 +145,9 @@ ApiCall({ key: secrets.key });
 
 - [Webpack documentation](https://webpack.js.org/concepts/)
 - [Chrome Extension documentation](https://developer.chrome.com/extensions/getstarted)
+- [Todo react apple](https://github.com/mateusznowosielski/todo-react-apple)
+- [React Chrome New Tab Extension](https://github.com/altany/react-new-tab-chrome-extension)
+- [Chrome extension starter](https://github.com/gianlucadonato/chrome-extension-starter)
 
 ---
 
