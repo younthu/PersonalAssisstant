@@ -150,6 +150,8 @@ ApiCall({ key: secrets.key });
 - [Todo react apple](https://github.com/mateusznowosielski/todo-react-apple)
 - [React Chrome New Tab Extension](https://github.com/altany/react-new-tab-chrome-extension)
 - [Chrome extension starter](https://github.com/gianlucadonato/chrome-extension-starter)
+- [React Chat Elements](https://github.com/Detaysoft/react-chat-elements)
+- [React Chat Widget](https://github.com/Wolox/react-chat-widget)
 
 ---
 

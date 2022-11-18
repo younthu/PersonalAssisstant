@@ -6,10 +6,13 @@ import { Provider } from "react-redux";
 import { createStore } from 'redux';
 import rootReducer from './todos/reducers'
 import { FloatButton, Rate} from 'antd';
-import { FrownOutlined, MehOutlined, SmileOutlined, HeartOutlined} from '@ant-design/icons';
+import { FrownOutlined, MehOutlined, SmileOutlined, HeartOutlined, QuestionCircleOutlined} from '@ant-design/icons';
+import { Widget } from 'react-chat-widget';
 import { persistStore, persistReducer } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
+import 'react-chat-widget/lib/styles.css';
+
 const persistConfig = {
     key: 'root',
     storage,
@@ -28,25 +31,34 @@ const customIcons = {
 const Rates = () => (
   <>
     <Rate defaultValue={2} character={({index}) => index + 1 } />
-    <br />
+   
     <Rate defaultValue={3} character={({index}) => customIcons[index + 1]} />
-    <br />
+    {/* <br /> */}
     <Rate allowHalf defaultValue={2.5} />    
-    <br />
+    {/* <br /> */}
     <Rate character={<HeartOutlined />} allowHalf />
-    <br />
+    {/* <br /> */}
     <Rate character="A" allowHalf style={{ fontSize: 36 }} />
-    <br />
+    {/* <br /> */}
     <Rate character="好" allowHalf />
   </>
 );
+
+const handleNewUserMessage = (newMessage) => {
+  console.log(`New message incoming! ${newMessage}`);
+  // Now send the message throught the backend API
+};
 // used localStorage for redux persist, if want to remove the persist, please check it here: https://github.com/rt2zz/redux-persist .
 render(<Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
         <div>
         <Rates />
           <TodoApp />
-          <FloatButton onClick={() => console.log('click')} />
+          <FloatButton icon={<QuestionCircleOutlined />} type="primary" style={{ right: 24 }} onClick={() => console.log('click')} />
+          <FloatButton icon={<QuestionCircleOutlined />} type="default" style={{ right: 94 }} onClick={() => console.log('click')} />
+          <Widget
+        handleNewUserMessage={handleNewUserMessage}
+      />
         </div>
         </PersistGate>
 </Provider>, window.document.querySelector('#app-container'));
