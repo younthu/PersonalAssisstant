@@ -6,7 +6,7 @@ import { showCompletedTodo,
          hideCompletedTodo } from "../../actions/filterActions";
 import styles from "./less/status-bar.less";
 
-const StatusBar = (props) => {
+export const StatusBar = (props) => {
   const { showCompleted } = props;
   const completedTodosLength = props.todos.filter(todo => todo.completed).length;
 

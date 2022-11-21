@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import dayjs from 'dayjs';
 import { connect } from "react-redux";
 
 import { addTodo,
@@ -80,6 +81,7 @@ class TodoItem extends React.Component {
       this.props.updateTodo({
         id: this.props.todo.id,
         completed: event.target.checked,
+        completedAt: event.target.checked ? dayjs(): undefined,
       });
     } else {
       clearTimeout(this.timeoutId);

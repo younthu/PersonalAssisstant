@@ -12,6 +12,7 @@ import storage from 'redux-persist/lib/storage' // defaults to localStorage for 
 import 'react-chat-widget/lib/styles.css';
 import Request from './request.js'
 import { Button, message } from 'antd';
+import Rates from './honor/Rates'
 
 const persistConfig = {
     key: 'root',
@@ -21,30 +22,7 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 const store = createStore(persistedReducer);// a normal Redux store
 let persistor = persistStore(store)
-const customIcons = {
-    1: <FrownOutlined />,
-    2: <FrownOutlined />,
-    3: <MehOutlined />,
-    4: <SmileOutlined />,
-    5: <SmileOutlined />,
-};
 
-
-const Rates = () => (
-    <>
-        <Rate defaultValue={2} character={({ index }) => index + 1} />
-
-        <Rate defaultValue={3} character={({ index }) => customIcons[index + 1]} />
-        {/* <br /> */}
-        <Rate allowHalf defaultValue={2.5} />
-        {/* <br /> */}
-        <Rate character={<HeartOutlined />} allowHalf />
-        {/* <br /> */}
-        <Rate character="A" allowHalf style={{ fontSize: 36 }} />
-        {/* <br /> */}
-        <Rate character="好" allowHalf />
-    </>
-);
 
 const handleNewUserMessage = (newMessage) => {
     console.log(`New message incoming! ${newMessage}`);
@@ -84,7 +62,7 @@ export default function App() {
                {contextHolder}
                 <Rates />
                 <TodoApp />
-                <FloatButton icon={<QuestionCircleOutlined />} type="primary" style={{ right: 24 }} onClick={() => console.log('click')} />
+                <FloatButton icon={<QuestionCircleOutlined />} type="primary" style={{ left: 24 }} onClick={() => console.log('click')} />
                 <FloatButton icon={<QuestionCircleOutlined />} type="default" style={{ right: 94 }} onClick={() => console.log('click')} />
                 <Widget handleNewUserMessage={handleNewUserMessage} />
             </div>
