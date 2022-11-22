@@ -18,19 +18,23 @@ import { FrownOutlined, MehOutlined, SmileOutlined, HeartOutlined, QuestionCircl
 
 const Todo = props => {
   let todos = getCompletedByTodayTodos(props.todos)
-
+  let length = todos.length;
+  let rates = []
+  while(length > 0){
+    rates.push(<Rate allowHalf defaultValue={length >= 10? 10: length} count={10} style={{color: 'red', fontSize: 7}} /> );
+    rates.push(<br/>)
+    length -= 10
+  }
   return (<div className={styles.todo}>
     <div style={{display:'flex', width: '100%', flexDirection: 'row'}}>
       <h1 className={styles.headline} style={{flex: 3}}>
         New List
       </h1>
       <div style={{display:'flex',flexDirection: 'row', flex: 7, justifyContent: 'right'}} >
-        <div style={{color: 'gray'}}></div>
+        <div style={{color: 'gray', display: 'flex', flexDirection:'column'}}>
         {
-          todos.map((value, index) =>{
-            return <StarFilled style={{color: 'red'}}></StarFilled>
-          })
-        }
+          rates 
+        }</div>
       </div>
     </div>
     <StatusBar />
