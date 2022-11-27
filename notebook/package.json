@@ -1,0 +1,16 @@
+{
+  "name": "notebook",
+  "version": "1.0.0",
+  "description": "1. 搭建jupyter notebook环境, [Jupyter notebook配置javascript](https://www.jianshu.com/p/75c2d2e67e43). 2. 怎么配置ES6, 还有依赖: [写给Javascript程序员的Jupyter Notebook使用指北](https://juejin.cn/post/6844903620878549006)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "lodash": "^4.17.21",
+    "node-redmine": "^0.2.2"
+  }
+}

@@ -9638,6 +9638,14 @@ node-libs-browser@^2.2.1:
     util "^0.11.0"
     vm-browserify "^1.0.1"
 
+node-redmine@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/node-redmine/-/node-redmine-0.2.2.tgz#996aaa1c0d97754da1a3dd523ac5b617316e710c"
+  integrity sha512-qsZWzIlqsVH85ZWvh95sHiaygJglLblg2yuG1mry2vdvwdDY3u0lJ15d2XQJd+hiCjdB6fkWkjeUapEe7dEXDw==
+  dependencies:
+    debug "^2.2.0"
+    request "^2.75.0"
+
 node-releases@^2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.6.tgz#8a7088c63a55e493845683ebf3c828d8c51c5503"
@@ -11639,7 +11647,7 @@ repeating@^2.0.0:
   dependencies:
     is-finite "^1.0.0"
 
-request@^2.88.0, request@^2.88.2:
+request@^2.75.0, request@^2.88.0, request@^2.88.2:
   version "2.88.2"
   resolved "https://registry.yarnpkg.com/request/-/request-2.88.2.tgz#d73c918731cb5a87da047e207234146f664d12b3"
   integrity sha512-MsvtOrfG9ZcrOwAW+Qi+F6HbD0CWXEh9ou77uOb7FM2WPhwT7smM833PzanhJLsgXjN89Ir6V2PczXNnMpwKhw==
