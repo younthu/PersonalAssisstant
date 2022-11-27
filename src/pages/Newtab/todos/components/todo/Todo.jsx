@@ -22,7 +22,6 @@ const Todo = props => {
   let rates = []
   while(length > 0){
     rates.push(<Rate allowHalf defaultValue={length >= 10? 10: length} count={10} style={{color: 'red', fontSize: 7}} /> );
-    rates.push(<br/>)
     length -= 10
   }
   return (<div className={styles.todo}>

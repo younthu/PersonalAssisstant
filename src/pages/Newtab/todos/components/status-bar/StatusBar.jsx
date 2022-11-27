@@ -9,6 +9,7 @@ import styles from "./less/status-bar.less";
 export const StatusBar = (props) => {
   const { showCompleted } = props;
   const completedTodosLength = props.todos.filter(todo => todo.completed).length;
+  const totalTodosLength = props.todos.length;
 
   return (
     <header className={styles.statusBar}>
@@ -16,7 +17,7 @@ export const StatusBar = (props) => {
         <span className={styles.completedAmount}>
           {completedTodosLength}
         </span>
-        Completed
+        Completed(<span style={{color:'gray'}}>{`${totalTodosLength - completedTodosLength}/${completedTodosLength}/${totalTodosLength}`}</span>)
         {(completedTodosLength > 0) ?
           (<a
             href=""
